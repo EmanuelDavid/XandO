@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace XandO
 {
@@ -60,62 +49,52 @@ namespace XandO
             ShowWinner(GetWinner());
         }
 
-
-
         private void Button0_1_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button0_2_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button1_0_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button1_1_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button2_0_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button2_1_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button2_2_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void Button1_2_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-
         }
 
         private void SetButtonContent(object sender)
@@ -147,9 +126,9 @@ namespace XandO
                 if(result != null)
                 {
                     _matrix[0, 0].Background = _matrix[0, 1].Background = _matrix[0, 2].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
             }
 
             if ((_matrix[1, 0].Content == _matrix[1, 1].Content) && (_matrix[1, 1].Content == _matrix[1, 2].Content))
@@ -158,9 +137,9 @@ namespace XandO
                 if (result != null)
                 {
                     _matrix[1, 0].Background = _matrix[1, 1].Background = _matrix[1, 2].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
             }
 
             if ((_matrix[2, 0].Content == _matrix[2, 1].Content) && (_matrix[2, 1].Content == _matrix[2, 2].Content))
@@ -169,9 +148,9 @@ namespace XandO
                 if (result != null)
                 {
                     _matrix[2, 0].Background = _matrix[2, 1].Background = _matrix[2, 2].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
             }
 
             if ((_matrix[0, 0].Content == _matrix[1, 0].Content) && (_matrix[1, 0].Content == _matrix[2, 0].Content))
@@ -180,9 +159,9 @@ namespace XandO
                 if (result != null)
                 {
                     _matrix[0, 0].Background = _matrix[1, 0].Background = _matrix[2, 0].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
             }
 
             if ((_matrix[0, 1].Content == _matrix[1, 1].Content) && (_matrix[1, 1].Content == _matrix[2, 1].Content))
@@ -191,9 +170,9 @@ namespace XandO
                 if (result != null)
                 {
                     _matrix[0, 1].Background = _matrix[1, 1].Background = _matrix[2, 1].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
             }
 
             if ((_matrix[0, 2].Content == _matrix[1, 2].Content) && (_matrix[1, 2].Content == _matrix[2, 2].Content))
@@ -202,9 +181,31 @@ namespace XandO
                 if (result != null)
                 {
                     _matrix[0, 2].Background = _matrix[1, 2].Background = _matrix[2, 2].Background = Brushes.Green;
-                }
 
-                return result;
+                    return result;
+                }
+            }
+
+            if ((_matrix[0, 0].Content == _matrix[1, 1].Content) && (_matrix[1, 1].Content == _matrix[2, 2].Content))
+            {
+                var result = _matrix[0, 0].Content?.ToString();
+                if (result != null)
+                {
+                    _matrix[0, 0].Background = _matrix[1, 1].Background = _matrix[2, 2].Background = Brushes.Green;
+
+                    return result;
+                }
+            }
+
+            if ((_matrix[0, 2].Content == _matrix[1, 1].Content) && (_matrix[1, 1].Content == _matrix[2, 0].Content))
+            {
+                var result = _matrix[0, 2].Content?.ToString();
+                if (result != null)
+                {
+                    _matrix[0, 2].Background = _matrix[1, 1].Background = _matrix[2, 0].Background = Brushes.Green;
+
+                    return result;
+                }
             }
 
             return null;
