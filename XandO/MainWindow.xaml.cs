@@ -43,58 +43,14 @@ namespace XandO
             }
         }
 
-        private void Button0_0_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             SetButtonContent(sender);
             ShowWinner(GetWinner());
-        }
-
-        private void Button0_1_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button0_2_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button1_0_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button1_1_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button2_0_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button2_1_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button2_2_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
-        }
-
-        private void Button1_2_Click(object sender, RoutedEventArgs e)
-        {
-            SetButtonContent(sender);
-            ShowWinner(GetWinner());
+            if (AllCellsHaveValue())
+            {
+                DoYouWhantToPlayAgain();
+            }
         }
 
         private void SetButtonContent(object sender)
@@ -114,6 +70,7 @@ namespace XandO
             else
             {
                 button.Content = Helper.Nought;
+                button.Foreground = Brushes.Red;
                 _currentPlayerTurn = Helper.Player.Cross;
             }
         }
@@ -216,17 +173,38 @@ namespace XandO
             if (winner != null)
             {
                 MessageBox.Show($"The winner is {winner}");
+                DoYouWhantToPlayAgain();
+            }
+        }
 
-                if(MessageBox.Show("Do you whant to play again?", "Question",
-                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+        private void DoYouWhantToPlayAgain()
+        {
+            if (MessageBox.Show("Do you whant to play again?", "Question",
+                            MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                InitialiseMatrix();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private bool AllCellsHaveValue()
+        {
+            bool result = true;
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
                 {
-                    InitialiseMatrix();
-                }
-                else
-                {
-                    Close();
+                    if(_matrix[row, col].Content == null)
+                    {
+                        result = false;
+                    }
                 }
             }
+
+            return result;
         }
     }
 }
