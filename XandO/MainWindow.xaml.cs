@@ -66,6 +66,7 @@ namespace XandO
             {
                 button.Content = Helper.Cross;
                 _currentPlayerTurn = Helper.Player.Nought;
+                button.Foreground = Brushes.Blue;
             }
             else
             {
