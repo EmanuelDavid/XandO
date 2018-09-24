@@ -8,17 +8,13 @@ namespace XandO
 {
     public static class Helper
     {
-        public enum MarckType
-        {
-            Free,
-            Nought,
-            Cross
-        }
-
         public enum Player
         {
             Nought,
             Cross
         }
+
+        public const string Nought = "O";
+        public const string Cross = "X";
     }
 }
