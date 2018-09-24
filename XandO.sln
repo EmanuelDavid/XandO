@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XandO", "XandO\XandO.csproj", "{0C740A22-8FFA-4DF9-B28B-76EEB2B7D179}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C740A22-8FFA-4DF9-B28B-76EEB2B7D179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C740A22-8FFA-4DF9-B28B-76EEB2B7D179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C740A22-8FFA-4DF9-B28B-76EEB2B7D179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C740A22-8FFA-4DF9-B28B-76EEB2B7D179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26F88CB7-6A1F-4FFC-8DC5-6439A5DDAD13}
+	EndGlobalSection
+EndGlobal
